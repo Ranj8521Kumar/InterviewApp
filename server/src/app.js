@@ -1,6 +1,7 @@
 import express, { json } from 'express';
 import { connect } from 'mongoose';
 import interviewRoutes from './routes/interview.routes.js';
+import resumeRoutes from './routes/resume.routes.js';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/interview', interviewRoutes);
+app.use('/api/resume', resumeRoutes);
 
 
 connect(process.env.MONGO_URI).then(
